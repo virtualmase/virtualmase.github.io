@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://virtualmase.github.io/sitemap.xml

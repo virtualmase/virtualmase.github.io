@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Virtualmase atlas symbol">
+  <rect width="64" height="64" rx="12" fill="#f7f6f0"/>
+  <path d="M14 14 32 49 50 14M32 49V9" fill="none" stroke="#1746c8" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <circle cx="32" cy="49" r="5" fill="#d65e37"/>
+  <path d="M10 14h9M45 14h9" fill="none" stroke="#10233f" stroke-width="3"/>
+</svg>

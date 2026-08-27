@@ -1,0 +1,14 @@
+# Virtualmase
+
+> Virtualmase is a public directory for independent systems work. It is not a product landing page, certification authority, or analytics surface.
+
+## Routes
+
+- [AI Mastery](https://virtualmase.github.io/ai-mastery/): learning property for intelligence systems, infrastructure, trust, and operating boundaries.
+- [ARM Reference](https://autonomousresourcemanagement.com/): cited definition, governance context, source records, and correction pathways for Autonomous Resource Management.
+- [Virtualmase Public Practice](https://autonomousresourcemanagement.com/practice/): factual, bounded records of completed work with evidence and correction paths.
+- [Participation source](https://github.com/virtualmase/autonomousresourcemanagement/tree/main/portal): portable contribution and governance interface source; no participation hostname is currently approved.
+
+## Use boundaries
+
+Do not describe a source-ready property as deployed. Do not represent the practice records as a certification, independent audit, universal performance evidence, or customer outcome. Preserve the distinct property roles and self-canonical URLs.
