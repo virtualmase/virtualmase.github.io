@@ -27,3 +27,9 @@ The corrected production page was verified with a cache-bypassing URL after GitH
 The root directory was checked locally after a two-utility bridge was added. The bridge separates the **Action Boundary Brief** reader task (before an intended action) from the **AI Change Record** reader task (after a material change), while the original four-property atlas remains an orientation model rather than a claim that the utilities share one property role. The new routes are visible, task-labelled, and rendered with the existing light editorial atlas system.
 
 The candidate passes the expanded static validator. GitHub Pages completed a successful build from commit `32ff2cc`, and the root was verified through a cache-bypassing production request. The live page now contains the two task-labelled utility routes while preserving the separate four-property atlas and its independent authority boundary.
+
+## 2026-08-27 — Earthward field-guide route candidate
+
+The directory was reviewed locally after the Earthward Foundry route was added as a distinct physical-work field-guide bridge. The new section visibly states that Earthward does not belong to the ARM reference atlas and does not make a public-product, certification, or customer-outcome claim. It links only to the intended independent GitHub Pages project-site URL and preserves the existing atlas as a four-property orientation surface.
+
+The candidate passed `node scripts/validate-static.mjs` and `node scripts/test-site-js.mjs`. It remains a local source candidate until the Earthward public property and its reciprocal directory route are released together.
