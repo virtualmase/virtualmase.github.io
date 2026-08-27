@@ -19,3 +19,5 @@ The root directory is a **route map**, not a content or canonical consolidation 
 The source is published to the special `virtualmase/virtualmase.github.io` user-site repository at commit `f8f80ba`. GitHub Pages is enabled from `main` and reports status `built` at `https://virtualmase.github.io/`. The public root now renders the directory title, atlas mark, property routes, independent-property boundary, and accessible primary navigation, replacing the prior account-root 404.
 
 The first release carried a stale source-ready status line because the production build completed during the release check. That wording is corrected in the follow-up source update before final release verification. No custom domain, DNS, analytics, Search Console, Vercel, or cross-domain canonical change occurred.
+
+The corrected production page was verified with a cache-bypassing URL after GitHub Pages again reported status `built`. It now visibly identifies the root directory as published from the source-controlled GitHub Pages route. The account-root 404 recovery and status correction are both complete.
