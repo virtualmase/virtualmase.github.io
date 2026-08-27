@@ -21,3 +21,9 @@ The source is published to the special `virtualmase/virtualmase.github.io` user-
 The first release carried a stale source-ready status line because the production build completed during the release check. That wording is corrected in the follow-up source update before final release verification. No custom domain, DNS, analytics, Search Console, Vercel, or cross-domain canonical change occurred.
 
 The corrected production page was verified with a cache-bypassing URL after GitHub Pages again reported status `built`. It now visibly identifies the root directory as published from the source-controlled GitHub Pages route. The account-root 404 recovery and status correction are both complete.
+
+## 2026-08-27 — Content-silo source candidate
+
+The root directory was checked locally after a two-utility bridge was added. The bridge separates the **Action Boundary Brief** reader task (before an intended action) from the **AI Change Record** reader task (after a material change), while the original four-property atlas remains an orientation model rather than a claim that the utilities share one property role. The new routes are visible, task-labelled, and rendered with the existing light editorial atlas system.
+
+The candidate passes the expanded static validator. It is not yet published to the account-root GitHub Pages site; the live root remains the preceding verified directory release until the source update is explicitly released.
