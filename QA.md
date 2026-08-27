@@ -33,3 +33,9 @@ The candidate passes the expanded static validator. GitHub Pages completed a suc
 The directory was reviewed locally after the Earthward Foundry route was added as a distinct physical-work field-guide bridge. The new section visibly states that Earthward does not belong to the ARM reference atlas and does not make a public-product, certification, or customer-outcome claim. It links only to the intended independent GitHub Pages project-site URL and preserves the existing atlas as a four-property orientation surface.
 
 The candidate passed `node scripts/validate-static.mjs` and `node scripts/test-site-js.mjs`. It remains a local source candidate until the Earthward public property and its reciprocal directory route are released together.
+
+## 2026-08-27 — Earthward field-guide route release
+
+The directory route was released from immutable root source commit `a21725c397954f1811f851add7e9fcdd423b5f4e`. GitHub Pages again reports `built` from `main` and `/ (root)`. A cache-bypassing browser review confirmed the visible **Earthward / 01** field-guide bridge, its reader task (one facility, one part family, one reviewable evidence loop), and its explicit statement that Earthward is not part of the ARM reference atlas and makes no public-product, certification, or customer-outcome claim.
+
+The published bridge points to the distinct live project site at `https://virtualmase.github.io/earthward-foundry/`; it does not add a cross-domain canonical, redirect, analytics tag, custom-domain/DNS change, or any claim about the protected pilot services.
