@@ -16,4 +16,6 @@ The root directory is a **route map**, not a content or canonical consolidation 
 
 ## Publication boundary
 
-The source is not yet published to the special `virtualmase/virtualmase.github.io` user-site repository. Publishing that repository would resolve the account-root 404 at `https://virtualmase.github.io/`; it requires the previously requested owner confirmation before the source is pushed and GitHub Pages is enabled.
+The source is published to the special `virtualmase/virtualmase.github.io` user-site repository at commit `f8f80ba`. GitHub Pages is enabled from `main` and reports status `built` at `https://virtualmase.github.io/`. The public root now renders the directory title, atlas mark, property routes, independent-property boundary, and accessible primary navigation, replacing the prior account-root 404.
+
+The first release carried a stale source-ready status line because the production build completed during the release check. That wording is corrected in the follow-up source update before final release verification. No custom domain, DNS, analytics, Search Console, Vercel, or cross-domain canonical change occurred.
