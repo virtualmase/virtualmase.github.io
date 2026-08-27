@@ -26,4 +26,4 @@ The corrected production page was verified with a cache-bypassing URL after GitH
 
 The root directory was checked locally after a two-utility bridge was added. The bridge separates the **Action Boundary Brief** reader task (before an intended action) from the **AI Change Record** reader task (after a material change), while the original four-property atlas remains an orientation model rather than a claim that the utilities share one property role. The new routes are visible, task-labelled, and rendered with the existing light editorial atlas system.
 
-The candidate passes the expanded static validator. It is not yet published to the account-root GitHub Pages site; the live root remains the preceding verified directory release until the source update is explicitly released.
+The candidate passes the expanded static validator. GitHub Pages completed a successful build from commit `32ff2cc`, and the root was verified through a cache-bypassing production request. The live page now contains the two task-labelled utility routes while preserving the separate four-property atlas and its independent authority boundary.
