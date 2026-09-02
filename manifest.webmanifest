@@ -1,7 +1,7 @@
 {
-  "name": "Virtualmase Public Directory",
-  "short_name": "Virtualmase",
-  "description": "A public directory for independent Virtualmase systems work.",
+  "name": "virtualmase Public Directory",
+  "short_name": "virtualmase",
+  "description": "A public directory for independent virtualmase systems work.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f7f6f0",

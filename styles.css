@@ -52,6 +52,7 @@ h1 { max-width: 740px; margin-bottom: 1.75rem; font: 400 clamp(3.75rem, 7vw, 7.2
 h1 em, h2 em { color: var(--ultramarine); font-style: italic; }
 .entry-deck { max-width: 585px; margin-bottom: 2.1rem; color: var(--ink-soft); font-size: clamp(1rem, 1.3vw, 1.18rem); line-height: 1.65; }
 .entry-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.6rem; }
+.hero-proof{display:flex;flex-wrap:wrap;gap:.65rem 1.5rem;margin:2rem 0 0;padding:1.25rem 0 0;border-top:1px solid var(--line);list-style:none;color:var(--ink-soft);font:.58rem/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase}.hero-proof li{display:flex;align-items:center;gap:.5rem}.hero-proof li::before{content:"";width:.35rem;height:.35rem;background:var(--oxide)}
 .button { min-height: 48px; padding: .95rem 1.15rem; display: inline-flex; align-items: center; gap: 1rem; font: .65rem/1 var(--mono); letter-spacing: .075em; text-decoration: none; text-transform: uppercase; }
 .button-primary { background: var(--ultramarine); color: #fff; border: 1px solid var(--ultramarine); }
 .button-primary:hover { background: var(--ultramarine-deep); }
