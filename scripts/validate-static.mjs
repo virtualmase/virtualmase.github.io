@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const root = resolve(new URL('..', import.meta.url).pathname);
-const files = ['index.html', 'styles.css', 'script.js', '404.html', 'favicon.svg', 'favicon-48.png', 'favicon-180.png', 'favicon-192.png', 'favicon-512.png', 'og-image.svg', 'og-image.png', 'manifest.webmanifest', 'robots.txt', 'sitemap.xml', '.nojekyll', 'llms.txt', 'README.md', 'ideas.md', 'QA.md', 'assets/fonts/instrument-sans-variable.woff2', 'assets/fonts/INSTRUMENT-SANS-LICENSE.txt', 'docs/typography-system.md', 'scripts/render_brand_assets.py'];
+const files = ['index.html', 'skills.html', 'projects.html', 'connect.html', 'styles.css', 'script.js', '404.html', 'favicon.svg', 'favicon-48.png', 'favicon-180.png', 'favicon-192.png', 'favicon-512.png', 'og-image.svg', 'og-image.png', 'manifest.webmanifest', 'robots.txt', 'sitemap.xml', '.nojekyll', 'llms.txt', 'README.md', 'ideas.md', 'QA.md', 'assets/fonts/instrument-sans-variable.woff2', 'assets/fonts/INSTRUMENT-SANS-LICENSE.txt', 'docs/typography-system.md', 'scripts/render_brand_assets.py'];
 const required = [
   ['index.html', '<html lang="en">'],
   ['index.html', '<link rel="canonical" href="https://virtualmase.github.io/">'],
@@ -11,6 +11,7 @@ const required = [
   ['index.html', 'og-image.png'], ['index.html', 'manifest.webmanifest'],
   ['index.html', 'site-footer--operating'], ['index.html', 'Skip to the directory'],
   ['index.html', 'WHAT IS VIRTUALMASE?'], ['index.html', 'HOW IT WORKS'],
+  ['index.html', 'START HERE'], ['index.html', 'connect.html'],
   ['index.html', 'role="tablist"'], ['index.html', 'role="tabpanel"'],
   ['index.html', 'https://github.com/virtualmase/lifecycle-skills'],
   ['index.html', 'https://github.com/virtualmase'],
@@ -20,6 +21,15 @@ const required = [
   ['index.html', 'https://virtualmase.github.io/action-boundary-brief/'],
   ['index.html', 'https://virtualmase.github.io/ai-change-record/'],
   ['index.html', 'https://virtualmase.github.io/earthward-foundry/'],
+  ['skills.html', 'SKILLS GUIDE'],
+  ['skills.html', 'Experience Research'],
+  ['projects.html', 'PROJECT MAP'],
+  ['projects.html', 'Arctura Network'],
+  ['connect.html', 'CONNECT'],
+  ['connect.html', 'https://substack.com/@virtualmase'],
+  ['sitemap.xml', '<loc>https://virtualmase.github.io/skills.html</loc>'],
+  ['sitemap.xml', '<loc>https://virtualmase.github.io/projects.html</loc>'],
+  ['sitemap.xml', '<loc>https://virtualmase.github.io/connect.html</loc>'],
   ['index.html', 'Earthward Foundry is a separate, informational physical-work field guide.'],
   ['index.html', 'Seven reader tasks'],
   ['index.html', 'This root directory is published from its source-controlled GitHub Pages route.'],
@@ -33,7 +43,7 @@ const prohibited = [/\bfetch\s*\(/i, /XMLHttpRequest/i, /sendBeacon/i, /localSto
 let failed = false; const fail = (message) => { console.error(`FAIL: ${message}`); failed = true; };
 for (const file of files) if (!existsSync(resolve(root, file))) fail(`Missing required file: ${file}`);
 for (const [file, fragment] of required) { const text = readFileSync(resolve(root, file), 'utf8'); if (!text.includes(fragment)) fail(`${file} is missing required content: ${fragment}`); }
-for (const file of ['index.html', 'styles.css', 'script.js', '404.html']) { const text = readFileSync(resolve(root, file), 'utf8'); for (const pattern of prohibited) if (pattern.test(text)) fail(`${file} contains prohibited pattern: ${pattern}`); }
+for (const file of ['index.html', 'skills.html', 'projects.html', 'connect.html', 'styles.css', 'script.js', '404.html']) { const text = readFileSync(resolve(root, file), 'utf8'); for (const pattern of prohibited) if (pattern.test(text)) fail(`${file} contains prohibited pattern: ${pattern}`); }
 const styles = readFileSync(resolve(root, 'styles.css'), 'utf8');
 if (!styles.includes('font-family:"Instrument Sans"')) fail('styles.css does not declare the unified Instrument Sans family');
 if (!styles.includes('--type:"Instrument Sans",Arial,sans-serif')) fail('styles.css does not define the unified type token');

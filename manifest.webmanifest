@@ -1,7 +1,7 @@
 {
   "name": "virtualmase Public Directory",
   "short_name": "virtualmase",
-  "description": "An open workshop for practical, reusable skills.",
+  "description": "A public systems directory for practical software work, engineering judgment, open skills, operating records, and maintainable digital projects.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#171612",

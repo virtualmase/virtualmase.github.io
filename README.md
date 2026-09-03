@@ -16,6 +16,14 @@ The root site has three jobs:
 
 It is a directory with an editorial point of view, not a landing page for everything we have ever made.
 
+## Public pages
+
+The root now includes three supporting pages that make the flagship route easier to use:
+
+- [`skills.html`](https://virtualmase.github.io/skills.html) helps a visitor choose the right lifecycle skill by project moment.
+- [`projects.html`](https://virtualmase.github.io/projects.html) maps the public systems, utilities, source routes, and their boundaries.
+- [`connect.html`](https://virtualmase.github.io/connect.html) collects GitHub, discussions, issues, writing, and social links.
+
 ## The workshop
 
 The main collection is [`lifecycle-skills`](https://github.com/virtualmase/lifecycle-skills), a set of working guides organized around moments that recur across projects.
@@ -82,8 +90,11 @@ The published site is deliberately conventional:
 ```text
 .
 ├── index.html
+├── skills.html
+├── projects.html
+├── connect.html
 ├── styles.css
-├── site.js
+├── script.js
 ├── 404.html
 ├── assets/
 ├── docs/
