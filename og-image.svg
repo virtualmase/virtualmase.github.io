@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Virtualmase public systems directory</title>
+  <title id="title">virtualmase public systems directory</title>
   <desc id="desc">A light editorial route map connecting AI Mastery, ARM reference, public practice, and participation source.</desc>
   <rect width="1200" height="630" fill="#f7f6f0"/>
   <g fill="none" stroke="#c7cbd0"><circle cx="950" cy="145" r="290"/><path d="M0 440H1200M145 0V630"/></g>
-  <g font-family="Georgia, serif" fill="#10233f"><text x="100" y="193" font-size="42">VIRTUALMASE / PUBLIC DIRECTORY</text><text x="100" y="326" font-size="106">A public map</text><text x="100" y="423" font-size="106">for <tspan fill="#1746c8" font-style="italic">systems work.</tspan></text></g>
+  <g font-family="Georgia, serif" fill="#10233f"><text x="100" y="193" font-size="42">virtualmase / PUBLIC DIRECTORY</text><text x="100" y="326" font-size="106">A public map</text><text x="100" y="423" font-size="106">for <tspan fill="#1746c8" font-style="italic">systems work.</tspan></text></g>
   <g fill="none" stroke="#1746c8" stroke-width="5" stroke-dasharray="10 10"><path d="M618 223C745 223 765 344 910 344s153-134 225-134"/><path d="M910 344c44 91 139 123 215 116"/></g>
   <g font-family="monospace" font-size="21" letter-spacing="2" fill="#10233f"><text x="582" y="185">AI MASTERY</text><text x="1062" y="173">ARM REFERENCE</text><text x="1060" y="508">PUBLIC PRACTICE</text></g>
   <g transform="translate(890 320)"><circle r="53" fill="#1746c8"/><text y="12" font-family="Georgia, serif" text-anchor="middle" font-size="44" fill="#fff">V/</text></g>

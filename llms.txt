@@ -1,17 +1,18 @@
-# Virtualmase
+# virtualmase
 
-> Virtualmase is a public directory for independent systems work. It is not a product landing page, certification authority, or analytics surface.
+> virtualmase is a public directory for independent systems work. It is not a product landing page, certification authority, or analytics surface.
 
 ## Routes
 
 - [Skills Guide](https://virtualmase.github.io/skills.html): practical routing page for choosing a lifecycle skill by project moment.
 - [Project Map](https://virtualmase.github.io/projects.html): ecosystem map for public systems, project roles, utilities, and source routes.
 - [Connect](https://virtualmase.github.io/connect.html): public source, discussion, issue, writing, and social routes.
+- [Engineering Judgment in AI-Assisted Software Development](https://virtualmase.github.io/engineering-judgment-ai-assisted-software-development.html): research-backed field guide to durable decisions, architecture decision records, cognitive and intent debt, architecture fitness functions, and human oversight.
 - [AI Mastery](https://virtualmase.github.io/ai-mastery/): learning property for intelligence systems, infrastructure, trust, and operating boundaries.
 - [Arctura Network](https://github.com/virtualmase/arctura.network): public network for useful work, contribution paths, documentation, and progress records.
 - [Lifecycle Skills](https://github.com/virtualmase/lifecycle-skills): reusable skill collection for prototype, builder, sweeper, grower, maintainer, and experience research workflows.
 - [ARM Reference](https://autonomousresourcemanagement.com/): cited definition, governance context, source records, and correction pathways for Autonomous Resource Management.
-- [Virtualmase Public Practice](https://autonomousresourcemanagement.com/practice/): factual, bounded records of completed work with evidence and correction paths.
+- [virtualmase Public Practice](https://autonomousresourcemanagement.com/practice/): factual, bounded records of completed work with evidence and correction paths.
 - [Action Boundary Brief](https://virtualmase.github.io/action-boundary-brief/): pre-action record for access, limits, oversight, and stop conditions.
 - [AI Change Record](https://virtualmase.github.io/ai-change-record/): material-change record for what changed, checks, monitoring, ownership, and recovery.
 - [Participation source](https://github.com/virtualmase/autonomousresourcemanagement/tree/main/portal): portable contribution and governance interface source; no participation hostname is currently approved.

@@ -1,4 +1,4 @@
-# Virtualmase Root Property — Design Direction
+# virtualmase Root Property — Design Direction
 
 ## Three possible approaches
 
@@ -26,16 +26,16 @@
 
 **Typography system.** Decision voice: Iowan Old Style, Baskerville, and Georgia. Working language: Arial, Helvetica, sans-serif. Trace labels: SFMono-Regular, Consolas, Liberation Mono, monospace. Headings are tightly set serif statements; route labels are spaced uppercase mono; paragraphs stay within a readable measure.
 
-**Brand essence.** Virtualmase is a public index for independent systems work, for readers who need to choose a credible starting point rather than consume a funnel. **Clear, bounded, investigative.**
+**Brand essence.** virtualmase is a public index for independent systems work, for readers who need to choose a credible starting point rather than consume a funnel. **Clear, bounded, investigative.**
 
 **Brand voice.** Headlines are direct, editorial, and specific. Calls to action describe the reader’s next inspection task rather than issuing generic commands. Example lines: “Choose the question before you choose the route.” and “Inspect the work record, not a claim about the work.”
 
-**Wordmark and logo.** A compact `V/` directory mark: two converging diagonal routes crossing a single reference axis. The sign appears as a compact glyph beside the deliberately constructed “Virtualmase” wordmark, never as plain default text alone.
+**Wordmark and logo.** A compact `V/` directory mark: two converging diagonal routes crossing a single reference axis. The sign appears as a compact glyph beside the deliberately constructed “virtualmase” wordmark, never as plain default text alone.
 
 **Signature brand color.** **Atlas Ultramarine — `#1746C8`**.
 
 ## Property-specific contribution
 
-**Reader question:** “Where does Virtualmase’s public systems work live, and which property should I use first?”
+**Reader question:** “Where does virtualmase’s public systems work live, and which property should I use first?”
 
 **Contribution:** This root page answers that routing question only. It does not reproduce AI Mastery lessons, the ARM definition, the practice records, the executive flagship, or the future portal. It retains its own self-canonical identity at `https://virtualmase.github.io/`.

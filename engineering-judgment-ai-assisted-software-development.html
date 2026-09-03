@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engineering Judgment in AI-Assisted Software Development | virtualmase</title>
+  <meta name="description" content="A practical guide to engineering judgment in AI-assisted software development: durable decisions, ADRs, cognitive debt, architecture fitness functions, and human oversight.">
+  <meta name="author" content="virtualmase">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://virtualmase.github.io/engineering-judgment-ai-assisted-software-development.html">
+  <meta name="theme-color" content="#171612">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="virtualmase"><meta property="og:title" content="The Scarce Skill Is Deciding What Must Stay True"><meta property="og:description" content="Engineering judgment for AI-assisted software development: preserve constraints, evidence, reversibility, and ownership when implementation accelerates."><meta property="og:url" content="https://virtualmase.github.io/engineering-judgment-ai-assisted-software-development.html"><meta property="og:image" content="https://virtualmase.github.io/assets/articles/engineering-judgment/code-got-cheaper.png"><meta property="og:image:width" content="1672"><meta property="og:image:height" content="941"><meta property="og:image:alt" content="Software architecture plans beside a laptop, illustrating how implementation speed changes engineering work">
+  <meta property="article:published_time" content="2026-09-02"><meta property="article:modified_time" content="2026-09-02"><meta property="article:author" content="virtualmase"><meta property="article:section" content="Software Engineering">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The Scarce Skill Is Deciding What Must Stay True"><meta name="twitter:description" content="A field guide to durable decisions, cognitive debt, ADRs, and architecture validation in AI-assisted software development."><meta name="twitter:image" content="https://virtualmase.github.io/assets/articles/engineering-judgment/code-got-cheaper.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png"><link rel="apple-touch-icon" href="favicon-180.png"><link rel="manifest" href="manifest.webmanifest"><link rel="preload" href="assets/fonts/instrument-sans-variable.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://virtualmase.github.io/engineering-judgment-ai-assisted-software-development.html#article","headline":"The Scarce Skill Is Deciding What Must Stay True","alternativeHeadline":"Engineering judgment in AI-assisted software development","description":"A practical guide to durable decisions, ADRs, cognitive debt, architecture fitness functions, and human oversight in AI-assisted software development.","datePublished":"2026-09-02","dateModified":"2026-09-02","author":{"@type":"Person","name":"virtualmase","url":"https://github.com/virtualmase"},"publisher":{"@type":"Organization","name":"virtualmase","url":"https://virtualmase.github.io/","logo":{"@type":"ImageObject","url":"https://virtualmase.github.io/favicon-512.png"}},"image":["https://virtualmase.github.io/assets/articles/engineering-judgment/code-got-cheaper.png","https://virtualmase.github.io/assets/articles/engineering-judgment/what-makes-a-decision-durable.png","https://virtualmase.github.io/assets/articles/engineering-judgment/automated-architecture-validation.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://virtualmase.github.io/engineering-judgment-ai-assisted-software-development.html"},"keywords":["engineering judgment","AI-assisted software development","architecture decision records","cognitive debt","intent debt","architecture fitness functions","AI-generated code review"],"inLanguage":"en"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is engineering judgment in AI-assisted software development?","acceptedAnswer":{"@type":"Answer","text":"Engineering judgment is disciplined reasoning about goals, constraints, evidence, tradeoffs, reversibility, blast radius, and ownership before and after software changes."}},{"@type":"Question","name":"How should teams review AI-generated code?","acceptedAnswer":{"@type":"Answer","text":"Teams should automate deterministic checks, preserve human review for consequential decisions, and verify both local code behavior and system-level constraints."}},{"@type":"Question","name":"What is an architecture fitness function?","acceptedAnswer":{"@type":"Answer","text":"An architecture fitness function is an objective check—such as a test, metric, monitor, or policy gate—that evaluates whether an important architectural characteristic remains intact as a system changes."}}]}]}</script>
+</head>
+<body class="article-body">
+  <a class="skip-link" href="#article">Skip to the article</a>
+  <header class="site-header"><a class="brand" href="index.html"><img src="favicon.svg" alt=""><strong>virtualmase</strong><span>public systems directory</span></a><nav class="desktop-nav" aria-label="Primary navigation"><a href="index.html">Home</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="connect.html">Connect</a><a href="https://github.com/virtualmase" rel="me">GitHub ↗</a></nav><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation"><span></span><span></span></button><nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation"><a href="index.html">Home</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="connect.html">Connect</a><a href="https://github.com/virtualmase" rel="me">GitHub ↗</a></nav></header>
+  <main id="article">
+    <article>
+      <header class="article-hero">
+        <div class="article-hero__meta"><p class="kicker">FIELD NOTE / ENGINEERING JUDGMENT</p><p>Published September 2, 2026 · 18 minute read</p></div>
+        <h1>The scarce skill is deciding <em>what must stay true.</em></h1>
+        <p class="article-deck">Engineering judgment in AI-assisted software development was never about reading more code. It is about preserving the constraints, evidence, reversibility, and ownership that decide whether a system survives its next change.</p>
+      </header>
+
+      <figure class="article-lead-image"><img src="assets/articles/engineering-judgment/code-got-cheaper.png" width="1672" height="941" alt="Architectural plans, handwritten assumptions, a drafting pencil, and a laptop displaying code" fetchpriority="high"><figcaption>When implementation gets cheaper, the plan, assumptions, and consequences carry more of the value.</figcaption></figure>
+
+      <div class="article-layout">
+        <aside class="article-toc" aria-label="Article contents"><p class="kicker">IN THIS GUIDE</p><ol><li><a href="#bottleneck">The bottleneck moved</a></li><li><a href="#judgment">What judgment means</a></li><li><a href="#stay-true">What must stay true</a></li><li><a href="#durable">Durable decisions</a></li><li><a href="#debt">Cognitive and intent debt</a></li><li><a href="#verification">Architecture validation</a></li><li><a href="#review">Decision review</a></li><li><a href="#faq">FAQ</a></li></ol></aside>
+        <div class="article-copy">
+          <p class="article-lede">A team can now ship more code, in less time, while trusting it less. That is not a paradox. It is evidence that the limiting factor in software development is moving away from implementation and toward decision quality.</p>
+
+          <p>In the <a href="https://survey.stackoverflow.co/2025/ai">2025 Stack Overflow Developer Survey</a>, 46% of respondents who answered the trust question said they distrust the accuracy of AI tools, compared with 33% who trust them. The same survey found that “almost right” AI answers were developers’ most common frustration. Google’s <a href="https://dora.dev/research/2025/dora-report/">2025 DORA research</a> reports near-universal workplace adoption—90% of technology professionals use AI—and more than 80% perceive productivity gains. Yet DORA’s follow-up analysis says 30% report little or no trust in AI-generated code.</p>
+
+          <p>Adoption, perceived speed, and trust are moving on different tracks. That makes <strong>engineering judgment in AI-assisted software development</strong> a practical operating concern, not a philosophical side quest.</p>
+
+          <section id="bottleneck">
+            <h2>The bottleneck moved from producing code to choosing consequences</h2>
+
+            <p>Anthropic’s <a href="https://www.anthropic.com/research/impact-software-development">analysis of 500,000 coding interactions</a> found that 79% of Claude Code conversations were classified as automation, versus 49% for Claude.ai. The study describes what people delegated during one week in April 2025; it does not establish whether the resulting software was useful, maintainable, or correct. That limitation is the point. We have increasingly rich telemetry for generation and relatively poor telemetry for whether a generated change was the right change.</p>
+
+            <p>Controlled studies show why context matters. GitHub reported a <a href="https://github.blog/news-insights/research/does-github-copilot-improve-code-quality-heres-what-the-data-says/">randomized study of 202 experienced developers</a> in which Copilot-assisted participants produced code that scored better on functionality, readability, reliability, maintainability, and conciseness for a bounded API exercise. Earlier GitHub research found developers completed a similarly bounded JavaScript task <a href="https://github.blog/news-insights/research/the-economic-impact-of-the-ai-powered-developer-lifecycle-and-lessons-from-github-copilot/">up to 55% faster</a>.</p>
+
+            <p>METR tested a very different environment: 16 experienced open-source developers completed 246 real tasks in mature repositories they knew well. Its <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">early-2025 randomized trial</a> found AI-allowed tasks took 19% longer, even though participants believed AI had made them faster. METR explicitly warned that this sample did not represent all software work. In a <a href="https://metr.org/blog/2026-02-24-uplift-update/">February 2026 update</a>, the researchers said newer tools likely produce more acceleration, while selection effects made the size of that improvement uncertain.</p>
+
+            <div class="article-callout"><strong>The durable conclusion is narrower than “AI makes developers faster” or “AI makes developers slower.”</strong><p>Automation helps differently across different tasks. The less bounded the problem and the more system history it carries, the more consequential the surrounding judgment becomes.</p></div>
+
+            <p>Cheap implementation also changes which ideas survive. When an internal service cost engineering weeks, weak ideas often died from expense. An agent can now produce the speculative abstraction or unnecessary dashboard in an afternoon. It may run. It may even be clean. None of that makes it worth owning.</p>
+          </section>
+
+          <section id="judgment">
+            <h2>Engineering judgment is disciplined reasoning, not senior intuition</h2>
+
+            <p>Judgment is often treated as the private instinct of a senior engineer. That framing makes it difficult to teach, review, or improve. A more useful definition is <strong>disciplined reasoning under uncertainty</strong>.</p>
+
+            <p>It includes framing the actual problem, separating requirements from assumptions, comparing viable alternatives, recognizing irreversible choices, calibrating confidence, estimating blast radius, seeking disconfirming evidence, and changing course when the evidence changes.</p>
+
+            <p>Those abilities are examinable. A decision can show its work. That is why the virtualmase <a href="https://virtualmase.github.io/ai-mastery/">AI Mastery learning system</a> treats engineering judgment as a practiced capability, and why the <a href="skills.html">software project lifecycle skills</a> begin with the smallest useful test instead of a full build.</p>
+
+            <p>Kief Morris describes a compatible model in <a href="https://martinfowler.com/articles/exploring-gen-ai/humans-and-agents.html">Humans and Agents in Software Engineering Loops</a>: people manage the “why loop,” while agents can increasingly operate inside “how loops.” The valuable human position is not necessarily checking every generated line or disappearing from the process. It is being <em>on the loop</em>—designing and maintaining the goals, constraints, tests, and feedback that shape the work.</p>
+          </section>
+
+          <section id="stay-true">
+            <h2>Ask one question before, during, and after every consequential change</h2>
+
+            <blockquote><p>What must stay true?</p></blockquote>
+
+            <p>Before implementation: what must remain true for this to still be the system people depend on? During implementation: what evidence would show that it remains true? After implementation: what must the next engineer—or agent—understand before changing it again?</p>
+
+            <p>The answers are system-specific, but they often look like these:</p>
+
+            <ul>
+              <li>Authentication must fail closed.</li>
+              <li>A retry must not execute a non-idempotent operation twice.</li>
+              <li>A migration must remain reversible until production validation is complete.</li>
+              <li>One service must retain mutation authority over one sensitive dataset.</li>
+              <li>A dependency must justify the operational surface it adds.</li>
+              <li>A local change must not silently overload an unrelated system.</li>
+            </ul>
+
+            <p>This question turns a vague review into an explicit contract. For work with meaningful external consequences, the virtualmase <a href="https://virtualmase.github.io/action-boundary-brief/">Action Boundary Brief for AI systems</a> records scope, access, limits, oversight, and stop conditions before action begins. It is a compact way to make “what must stay true” visible before implementation momentum makes the decision feel inevitable.</p>
+          </section>
+
+          <figure class="article-wide-image"><img src="assets/articles/engineering-judgment/what-makes-a-decision-durable.png" width="1672" height="941" loading="lazy" alt="System architecture diagram connecting requirements to four architecture decision records—explicit, verifiable, reversible, and traceable—and then to runtime services, validation, observability, and rollback paths"><figcaption>A durable architecture connects originating constraints to explicit decisions, executable evidence, runtime observation, and a path back.</figcaption></figure>
+
+          <section id="durable">
+            <h2>The four properties of a durable engineering decision</h2>
+
+            <p>A durable decision is not one that never changes. It is one that can survive scrutiny and change deliberately. Four properties make that possible.</p>
+
+            <h3>1. Explicit: state the protected constraint</h3>
+
+            <p>“We chose this architecture” carries almost no reusable information. “Only the checkout service may mutate payment state because it owns the authorization invariant” names the boundary, rationale, and condition under which the decision should be revisited.</p>
+
+            <p>Prompts and generated diffs rarely create this sentence reliably because implementation does not force anyone to explain why the implementation should exist. The team has to make the constraint a first-class artifact.</p>
+
+            <h3>2. Verifiable: define evidence, not reassurance</h3>
+
+            <p>A decision needs a test, metric, invariant, policy gate, or observable production behavior that can reveal whether it still works. Local code quality is part of that evidence, but it is not the whole system. A clean function can introduce the wrong dependency. A passing test suite can coexist with architecture drift.</p>
+
+            <p>Verification therefore asks two questions: does this change work locally, and does the decision beneath it still protect the system?</p>
+
+            <h3>3. Reversible: price the path back</h3>
+
+            <p>Reversibility does not mean every choice is easy to undo. It means the team knows the migration cost, dependencies, blast radius, and rollback path. A data migration or service-ownership decision does not become reversible because an agent generated its implementation quickly.</p>
+
+            <p>The harder a decision is to reverse, the more evidence it deserves before implementation. This is also why a <a href="https://virtualmase.github.io/ai-change-record/">traceable AI Change Record</a> includes validation, monitoring, ownership, and recovery rather than stopping at “what changed.”</p>
+
+            <h3>4. Traceable: leave the reasoning beside the work</h3>
+
+            <p>A future maintainer should be able to reconstruct why the decision exists, which alternatives were rejected, and what would invalidate it. Michael Nygard’s original <a href="https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions">architecture decision record</a> proposal remains useful because it is lightweight: one short, versioned record with context, decision, status, and consequences.</p>
+
+            <p>Architecture decision records are not a paperwork layer. A good ADR is a compact conversation with a future engineer. It should preserve the forces behind a decision without pretending the decision is permanent.</p>
+
+            <div class="decision-table" role="region" aria-label="Durable decision framework" tabindex="0"><table><thead><tr><th>Property</th><th>Question</th><th>Useful artifact</th></tr></thead><tbody><tr><td>Explicit</td><td>Which constraint produced this choice?</td><td>Decision statement</td></tr><tr><td>Verifiable</td><td>What evidence would show failure?</td><td>Test, metric, invariant, monitor</td></tr><tr><td>Reversible</td><td>What is the path and cost to undo it?</td><td>Rollback or migration plan</td></tr><tr><td>Traceable</td><td>Can a future maintainer recover the reasoning?</td><td>ADR and change record</td></tr></tbody></table></div>
+          </section>
+
+          <section id="debt">
+            <h2>AI-generated code can move debt out of the code and into the team</h2>
+
+            <p>Technical debt describes implementation choices that make a system harder to change. Faster generation does not remove it, but it introduces two adjacent failure modes that code-quality metrics can miss.</p>
+
+            <p>In <a href="https://doi.org/10.1145/3807966">From Technical Debt to Cognitive and Intent Debt</a>, University of Victoria researcher Margaret-Anne Storey distinguishes three layers of software health:</p>
+
+            <ul>
+              <li><strong>Technical debt</strong> lives in code and limits how a system can change.</li>
+              <li><strong>Cognitive debt</strong> accumulates as shared understanding erodes and limits how a team can reason about change.</li>
+              <li><strong>Intent debt</strong> accumulates when goals, constraints, and rationale are not captured in durable artifacts.</li>
+            </ul>
+
+            <p>The distinction echoes Peter Naur’s 1985 paper <a href="https://pages.cs.wisc.edu/~remzi/Naur.pdf">Programming as Theory Building</a>: programming is not merely text production; maintainers build a working theory of how the problem and solution fit together. Generated code can expand the text while the team’s theory shrinks.</p>
+
+            <p>This is the central risk in AI-generated code review. A team can inspect syntax, tests, and style while missing the fact that nobody can explain why the change belongs, which invariant it protects, or how it alters ownership. The problem is not simply bad code. It is unowned consequence.</p>
+          </section>
+
+          <section id="verification">
+            <h2>Move machines toward verification and humans toward consequence</h2>
+
+            <p>Reading every line produced by coding agents will not scale. The practical response is to automate what can be checked deterministically and reserve human attention for decisions a deterministic check cannot make.</p>
+
+            <p>Types, tests, static analysis, dependency rules, security scans, policy checks, deployment gates, and production monitors can all reduce review load. Architectural boundaries can also become executable. Thoughtworks defines <a href="https://www.thoughtworks.com/en-ca/insights/decoder/f/fitness-functions">architecture fitness functions</a> as automated checks that evaluate whether important characteristics—such as security, performance, availability, or data integrity—remain healthy as a system changes.</p>
+
+            <p>An architecture fitness function might fail a build when an unauthorized service imports a protected module, when latency crosses a budget, when a required audit event disappears, or when a repository lacks a security stage. The check does not decide which boundary matters. Humans do. Once that judgment is explicit, the machine can protect it continuously.</p>
+
+            <figure><img src="assets/articles/engineering-judgment/automated-architecture-validation.png" width="1672" height="941" loading="lazy" alt="Automated architecture validation dashboard showing checks for service boundaries, unauthorized dependencies, data ownership, policy contracts, append-only invariants, and rollback safety"><figcaption>Illustrative architecture validation: deterministic checks guard boundaries, ownership, policies, invariants, and recovery paths while preserving evidence for review.</figcaption></figure>
+
+            <h3>A practical verification stack</h3>
+
+            <ol>
+              <li><strong>State the invariant.</strong> Write the condition in language product, security, and engineering can challenge.</li>
+              <li><strong>Choose the evidence.</strong> Decide whether a test, metric, trace, policy, or manual review can detect a violation.</li>
+              <li><strong>Place the gate.</strong> Run cheap deterministic checks early; reserve expensive integration or production checks for the right stage.</li>
+              <li><strong>Preserve the result.</strong> Keep enough evidence to explain why a change passed and to investigate when behavior diverges.</li>
+              <li><strong>Name the owner.</strong> Every critical constraint needs someone responsible for revising the rule when reality changes.</li>
+            </ol>
+
+            <p>This is governance through feedback, not governance through ceremony. The goal is not to freeze the architecture. As the authors of <a href="https://www.thoughtworks.com/en-de/insights/books/building-evolutionaryarchitectures-second-edition">Building Evolutionary Architectures</a> argue, fitness functions make important characteristics explicit and testable so architecture can change without drifting accidentally.</p>
+          </section>
+
+          <section id="review">
+            <h2>A ten-question decision review for AI-assisted engineering</h2>
+
+            <p>Use this review before any consequential change ships, regardless of whether the implementation was written by a person, a coding assistant, or an autonomous agent:</p>
+
+            <ol class="review-list">
+              <li>What must remain true after this change?</li>
+              <li>Which assumption is doing the most work?</li>
+              <li>What evidence would prove this decision wrong?</li>
+              <li>What happens if we reverse this decision tomorrow?</li>
+              <li>What becomes harder because of this choice?</li>
+              <li>What new dependency or responsibility are we introducing?</li>
+              <li>What is the blast radius if our assumption is wrong?</li>
+              <li>What are we choosing not to build?</li>
+              <li>Who owns the consequences of this decision?</li>
+              <li>What must the next engineer understand before changing it?</li>
+            </ol>
+
+            <p>The questions cost minutes. Their value is not the completed list; it is the conversation that exposes an invisible constraint before a generated implementation turns it into a production fact.</p>
+
+            <div class="article-cta"><p class="kicker">PUT THE METHOD TO WORK</p><h2>Make the decision inspectable.</h2><p>Start with the pre-action boundary, build the smallest reviewed version, and leave a change record with evidence and a way back.</p><div><a class="button button-dark" href="https://virtualmase.github.io/action-boundary-brief/">Open Action Boundary Brief ↗</a><a class="button button-line" href="skills.html">Explore lifecycle skills</a></div></div>
+          </section>
+
+          <section id="faq" class="article-faq">
+            <h2>Frequently asked questions</h2>
+
+            <details><summary>What is engineering judgment in AI-assisted software development?</summary><p>It is disciplined reasoning about goals, constraints, evidence, alternatives, reversibility, blast radius, and ownership. The implementation may be delegated; responsibility for deciding which consequences are acceptable is not.</p></details>
+            <details><summary>How should teams review AI-generated code?</summary><p>Automate deterministic checks, then focus human review on intent, architecture, security and data boundaries, irreversible choices, new dependencies, and wide-blast-radius changes. Verify both local behavior and system-level constraints.</p></details>
+            <details><summary>What is the difference between code quality and decision quality?</summary><p>Code quality describes properties of an implementation, such as readability and maintainability. Decision quality asks whether the implementation solves the right problem, preserves important constraints, and creates acceptable consequences. Good code can implement a poor decision.</p></details>
+            <details><summary>What is an architecture fitness function?</summary><p>It is an objective check—a test, metric, monitor, policy gate, or other verification mechanism—that evaluates whether an important architectural characteristic remains intact as the system evolves.</p></details>
+            <details><summary>Are architecture decision records still useful with coding agents?</summary><p>Yes. ADRs give people and agents compact, versioned context about why a consequential choice exists, which alternatives were considered, and when the choice should be revisited.</p></details>
+          </section>
+
+          <footer class="article-sources"><h2>Sources and further reading</h2><ul><li><a href="https://survey.stackoverflow.co/2025/ai">Stack Overflow — 2025 Developer Survey: AI</a></li><li><a href="https://dora.dev/research/2025/dora-report/">Google Cloud DORA — State of AI-assisted Software Development 2025</a></li><li><a href="https://www.anthropic.com/research/impact-software-development">Anthropic — AI’s Impact on Software Development</a></li><li><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">METR — Early-2025 AI and Experienced Open-Source Developer Productivity</a></li><li><a href="https://github.blog/news-insights/research/does-github-copilot-improve-code-quality-heres-what-the-data-says/">GitHub — Does GitHub Copilot Improve Code Quality?</a></li><li><a href="https://doi.org/10.1145/3807966">Margaret-Anne Storey / ACM Queue — From Technical Debt to Cognitive and Intent Debt</a></li><li><a href="https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions">Michael Nygard — Documenting Architecture Decisions</a></li><li><a href="https://martinfowler.com/articles/exploring-gen-ai/humans-and-agents.html">Kief Morris / MartinFowler.com — Humans and Agents in Software Engineering Loops</a></li><li><a href="https://www.thoughtworks.com/en-ca/insights/decoder/f/fitness-functions">Thoughtworks — Architecture Fitness Functions</a></li></ul><p><strong>Editorial note:</strong> Research findings are scoped to their study populations, tasks, tools, and dates. The architecture diagrams are illustrative designs, not claims about a deployed production system.</p></footer>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer"><div><a class="footer-brand" href="index.html">virtualmase</a><p>Public systems for work that should remain understandable, inspectable, and maintainable.</p></div><nav aria-label="Footer navigation"><a href="index.html">Public systems</a><a href="skills.html">Skills guide</a><a href="projects.html">Project map</a><a href="connect.html">Connect</a><a href="https://github.com/virtualmase" rel="me">GitHub ↗</a></nav><p class="footer-note">Published from source. Factual corrections and useful counterexamples are welcome through the homepage repository.</p></footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

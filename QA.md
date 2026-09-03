@@ -1,8 +1,8 @@
-# Release QA — Virtualmase Public Directory
+# Release QA — virtualmase Public Directory
 
 ## Local visual review — 2026-08-27
 
-The first local-preview attempt on port `8093` was discarded because that port was already owned by an unrelated legacy site. A second preview on a confirmed-free port served the actual root-directory source and rendered the intended light editorial atlas composition: the high-contrast Virtualmase atlas mark, asymmetric directory metadata rail, original SVG property atlas, clear property-question route cards, explicit operating boundary, and expanded operating footer.
+The first local-preview attempt on port `8093` was discarded because that port was already owned by an unrelated legacy site. A second preview on a confirmed-free port served the actual root-directory source and rendered the intended light editorial atlas composition: the high-contrast virtualmase atlas mark, asymmetric directory metadata rail, original SVG property atlas, clear property-question route cards, explicit operating boundary, and expanded operating footer.
 
 The root directory is a **route map**, not a content or canonical consolidation layer. Visible copy distinguishes AI Mastery learning, ARM reference, public practice, and participation source. It marks the root directory source as awaiting owner-approved publication and the portal hostname as owner-gated.
 
